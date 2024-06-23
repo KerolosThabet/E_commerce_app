@@ -1,3 +1,5 @@
+import 'package:e_commerce_route/domain/entites/CategoryEntity.dart';
+
 /// currentPage : 1
 /// numberOfPages : 1
 /// limit : 40
@@ -24,5 +26,8 @@ class Metadata {
     map['limit'] = limit;
     return map;
   }
+
+
+
 
 }

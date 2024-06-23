@@ -1,14 +1,14 @@
-import '../../../domain/entites/CategoryEntity.dart';
+import 'package:e_commerce_route/domain/entites/BrandEntity.dart';
 
-/// _id : "6439d61c0049ad0b52b90051"
-/// name : "Music"
-/// slug : "music"
-/// image : "https://ecommerce.routemisr.com/Route-Academy-categories/1681511964020.jpeg"
-/// createdAt : "2023-04-14T22:39:24.365Z"
-/// updatedAt : "2023-04-14T22:39:24.365Z"
+/// _id : "64089fe824b25627a25315d1"
+/// name : "Canon"
+/// slug : "canon"
+/// image : "https://ecommerce.routemisr.com/Route-Academy-brands/1678286824747.png"
+/// createdAt : "2023-03-08T14:47:04.912Z"
+/// updatedAt : "2023-03-08T14:47:04.912Z"
 
-class CategoryModel {
-  CategoryModel({
+class brandModel {
+  brandModel({
       this.id, 
       this.name, 
       this.slug, 
@@ -16,7 +16,7 @@ class CategoryModel {
       this.createdAt, 
       this.updatedAt,});
 
-  CategoryModel.fromJson(dynamic json) {
+  brandModel.fromJson(dynamic json) {
     id = json['_id'];
     name = json['name'];
     slug = json['slug'];
@@ -42,13 +42,11 @@ class CategoryModel {
     return map;
   }
 
-  CategoryEntity toCategoryEntity(){
-    return CategoryEntity(
-        slug :slug ,
+  brandEntity toBrandEntity (){
+    return brandEntity(
         id: id ,
-        image: image,
+        image:image ,
         name: name
     );
-  }
-
+}
 }
