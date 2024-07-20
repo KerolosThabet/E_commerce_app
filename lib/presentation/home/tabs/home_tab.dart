@@ -1,8 +1,6 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce_route/core/DI/di.dart';
-import 'package:e_commerce_route/presentation/home/tabs/view_model/Home_tab_view_model.dart';
-import 'package:e_commerce_route/presentation/home/widgets/Category_Widget.dart';
 import 'package:e_commerce_route/presentation/home/widgets/brandsList_Widget.dart';
 import 'package:e_commerce_route/presentation/home/widgets/categoriesLIst_widget.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/utils/assets_manager.dart';
 import '../../../core/utils/string_manager.dart';
+import '../widgets/MostSelling_Product_Widget.dart';
+import 'Home_tab/Home_tab_view_model.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
@@ -59,7 +59,14 @@ static List<String> ads =[AssetsManager.ad1,AssetsManager.ad2,AssetsManager.ad3,
              ],
            ),),
            SliverToBoxAdapter(child:SizedBox(height: 16.h,),),
-           BrandsListWidget()
+           SliverToBoxAdapter(child: BrandsListWidget()),
+           SliverToBoxAdapter(child:SizedBox(height: 25.h,),),
+           SliverToBoxAdapter(child:
+               Text(StringManager.MostSellingProduct,
+                 style: Theme.of(context).textTheme.headlineLarge,)
+           ),
+           SliverToBoxAdapter(child:SizedBox(height: 16.h,),),
+           SliverToBoxAdapter( child: MostSellingProductWidget(),)
 
          ],
         ),

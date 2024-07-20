@@ -6,16 +6,17 @@ import 'package:injectable/injectable.dart';
 
 import '../../core/api/EndPoints.dart';
 
-@Injectable(as: BrandesDatasource)
-class BrandesDatasourceImp extends BrandesDatasource {
+@Injectable(as: BrandsDatasource)
+
+class BrandsDatasourceImp extends BrandsDatasource {
   ApiManager apiManager;
   @factoryMethod
-  BrandesDatasourceImp(this.apiManager);
+  BrandsDatasourceImp(this.apiManager);
 
   @override
   Future<Either<BrandesResponse, String>> getBrandes() async {
     try{
-      var response = await apiManager.getRequest(endPoint: EndPoint.brandesEndPoint);
+      var response = await apiManager.getRequest(endPoint: EndPoint.brandsEndPoint);
       BrandesResponse brandesResponse =BrandesResponse.fromJson(response.data);
       return Left(brandesResponse);
     }catch(error){

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BrandWidget extends StatelessWidget {
-  brandEntity brand ;
+  BrandEntity brand ;
    BrandWidget({super.key, required this.brand});
 
   @override
@@ -13,8 +13,8 @@ class BrandWidget extends StatelessWidget {
       children: [
         CachedNetworkImage(
           imageUrl: brand.image??'',
-          errorWidget: (context, url, error) => Icon(Icons.error,size: 25.sp,),
           placeholder: (context, url) => Center(child: CircularProgressIndicator(),),
+          errorWidget: (context, url, error) => Icon(Icons.error,size: 25.sp,),
           imageBuilder: (context, imageProvider) {
             return Container(
               height: 100.h,

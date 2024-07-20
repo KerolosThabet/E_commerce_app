@@ -1,8 +1,9 @@
-import 'package:e_commerce_route/presentation/home/tabs/view_model/Home_tab_view_model.dart';
 import 'package:e_commerce_route/presentation/home/widgets/brand_Widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../tabs/Home_tab/Home_tab_view_model.dart';
 
 class BrandsListWidget extends StatefulWidget {
   const BrandsListWidget({super.key});
@@ -22,8 +23,7 @@ class _BrandsListWidgetState extends State<BrandsListWidget> {
   }
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-        child: BlocBuilder<HomeTabViewModel,HomeTabStates>(
+    return  BlocBuilder<HomeTabViewModel,HomeTabStates>(
           buildWhen: (previous, current) {
             if(current is brandsSuccessStates || current is brandsErrorStates || current is brandsLoadingStates){
               return true;
@@ -48,7 +48,7 @@ class _BrandsListWidgetState extends State<BrandsListWidget> {
               return Center(child: CircularProgressIndicator());
             },
 
-        )
+
     );
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../tabs/view_model/Home_tab_view_model.dart';
+import '../tabs/Home_tab/Home_tab_view_model.dart';
 import 'Category_Widget.dart';
 
 class CategoriesListWidget extends StatefulWidget {

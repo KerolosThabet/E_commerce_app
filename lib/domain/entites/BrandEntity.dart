@@ -6,8 +6,8 @@
 /// updatedAt : "2023-03-08T14:34:19.466Z"
 /// __v : 0
 
-class brandEntity {
-  brandEntity({
+class BrandEntity {
+  BrandEntity({
       this.id, 
       this.name, 
       this.image,

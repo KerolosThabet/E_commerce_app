@@ -42,8 +42,8 @@ class brandModel {
     return map;
   }
 
-  brandEntity toBrandEntity (){
-    return brandEntity(
+  BrandEntity toBrandEntity (){
+    return BrandEntity(
         id: id ,
         image:image ,
         name: name

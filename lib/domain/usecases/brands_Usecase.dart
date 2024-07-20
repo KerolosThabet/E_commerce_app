@@ -10,7 +10,7 @@ class BrandsUseCase{
   @factoryMethod
   BrandsUseCase(this.brandesRepo);
 
-  Future<Either<List<brandEntity>, String>> Call(){
+  Future<Either<List<BrandEntity>, String>> Call(){
     return brandesRepo.getBrands();
   }
 }

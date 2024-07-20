@@ -6,11 +6,11 @@ import 'package:injectable/injectable.dart';
 
 @Injectable(as: BrandesRepo)
 class BrandsRepoImp extends BrandesRepo {
-  BrandesDatasource ApiDatasource;
+  BrandsDatasource ApiDatasource;
   @factoryMethod
   BrandsRepoImp(this.ApiDatasource);
   @override
-  Future<Either<List<brandEntity>, String>> getBrands() async {
+  Future<Either<List<BrandEntity>, String>> getBrands() async {
     var result = await ApiDatasource.getBrandes();
     return result.fold((response) {
       var brandsListModel = response.data ?? [];
