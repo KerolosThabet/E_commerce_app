@@ -53,7 +53,7 @@ class ProductModel {
     if (json['subcategory'] != null) {
       subcategory = [];
       json['subcategory'].forEach((v) {
-        subcategory?.add(Subcategory.fromJson(v));
+        subcategory?.add(SubCategoryModel.fromJson(v));
       });
     }
     ratingsQuantity = json['ratingsQuantity'];
@@ -74,7 +74,7 @@ class ProductModel {
   }
   num? sold;
   List<String>? images;
-  List<Subcategory>? subcategory;
+  List<SubCategoryModel>? subcategory;
   num? ratingsQuantity;
   String? id;
   String? title;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WhishlistTab extends StatelessWidget {
-  const WhishlistTab({super.key});
+   WhishlistTab({super.key});
 
   @override
   Widget build(BuildContext context) {

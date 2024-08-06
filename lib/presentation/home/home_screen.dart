@@ -13,7 +13,7 @@ import 'Home_ViewModel.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  static const List<Widget>tabs=[HomeTab(),CategoriesTab(),WhishlistTab(),ProfileTab()];
+  static  List<Widget>tabs=[HomeTab(),CategoriesTab(),WhishlistTab(),ProfileTab()];
 
   @override
   Widget build(BuildContext context) {

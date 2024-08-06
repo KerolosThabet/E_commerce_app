@@ -5,23 +5,29 @@ import 'package:e_commerce_route/domain/entites/SubcategoryEntity.dart';
 /// slug : "men's-clothing"
 /// category : "6439d5b90049ad0b52b90048"
 
-class Subcategory {
-  Subcategory({
-      this.id, 
-      this.name, 
-      this.slug, 
-      this.category,});
+class SubCategoryModel {
+  SubCategoryModel({
+    this.id,
+    this.name,
+    this.slug,
+    this.category,
+    this.createdAt,
+    this.updatedAt,});
 
-  Subcategory.fromJson(dynamic json) {
+  SubCategoryModel.fromJson(dynamic json) {
     id = json['_id'];
     name = json['name'];
     slug = json['slug'];
     category = json['category'];
+    createdAt = json['createdAt'];
+    updatedAt = json['updatedAt'];
   }
   String? id;
   String? name;
   String? slug;
   String? category;
+  String? createdAt;
+  String? updatedAt;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -29,6 +35,8 @@ class Subcategory {
     map['name'] = name;
     map['slug'] = slug;
     map['category'] = category;
+    map['createdAt'] = createdAt;
+    map['updatedAt'] = updatedAt;
     return map;
   }
 
@@ -36,8 +44,11 @@ class Subcategory {
     return SubcategoryEntity(
       slug: slug,
       category: slug,
+      name: name,
       id: id,
-        name: name
+      createdAt: createdAt,
+      updatedAt: updatedAt
+
     );
   }
 }

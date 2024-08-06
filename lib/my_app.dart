@@ -1,5 +1,7 @@
 import 'package:e_commerce_route/config/theme/AppTheme.dart';
 import 'package:e_commerce_route/presentation/home/home_screen.dart';
+import 'package:e_commerce_route/presentation/signin_user/SignIn_Screen.dart';
+import 'package:e_commerce_route/presentation/signup_user/SignUp_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -19,10 +21,12 @@ class MyApp extends StatelessWidget {
         title: 'e_commerce_route',
         routes: {
           RoutesManager.HomeRouteName:(_)=> HomeScreen(),
+          RoutesManager.SignInScreen:(_)=> SignInScreen(),
+          RoutesManager.SignUpScreen :(_)=> SignUpScreen()
         },
         theme:AppTheme.lightTheme ,
         themeMode: ThemeMode.light,
-        initialRoute:RoutesManager.HomeRouteName ,
+        initialRoute:RoutesManager.SignInScreen ,
         debugShowCheckedModeBanner: false,
 
       ),
