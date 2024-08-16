@@ -23,6 +23,14 @@ class HomeScreen extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: SvgPicture.asset(AssetsManager.Route,height: 22.h ,width: 66.w ,),
+            actions: [
+              IconButton(
+                  onPressed: () {
+
+                  },
+                  icon: Icon(Icons.logout,color: Theme.of(context).colorScheme.primary,)
+              )
+            ],
           ),
           bottomNavigationBar: BottomNavigationBar(
               showSelectedLabels: false,
