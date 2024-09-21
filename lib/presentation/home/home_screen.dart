@@ -26,7 +26,6 @@ class HomeScreen extends StatelessWidget {
             actions: [
               IconButton(
                   onPressed: () {
-
                   },
                   icon: Icon(Icons.logout,color: Theme.of(context).colorScheme.primary,)
               )

@@ -8,12 +8,13 @@ class AppTheme{
     appBarTheme: AppBarTheme(
       scrolledUnderElevation: 0,
       color: Colors.transparent,
-
     ),
+
       colorScheme: ColorScheme.fromSeed(
           seedColor: ColorsManager.primaryColor,
           primary: ColorsManager.primaryColor
       ),
+
     textTheme: TextTheme(
       headlineLarge: TextStyle(
           fontSize: 18.sp ,fontWeight:FontWeight.w500,color: ColorsManager.headLineColor

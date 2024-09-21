@@ -9,6 +9,8 @@ class AuthRepoImpl extends AuthRepo{
   AuthDatasource apiDatasource;
   @factoryMethod
   AuthRepoImpl(this.apiDatasource);
+
+
   @override
   Future<Either<AuthEntity, String>> SignUp(
       {required String email,
@@ -21,9 +23,23 @@ class AuthRepoImpl extends AuthRepo{
              AuthEntity authEntity = response.toAuthEntity();
              return left(authEntity);
            },
-           (Erorr){
-             return right(Erorr.toString());
+           (Error){
+             return right(Error.toString());
            });
   }
+
+  @override
+  Future<Either<AuthEntity, String>> SignIN({required String email, required String password}) async{
+    var response = await apiDatasource.SignIn(email: email, password: password);
+    return response.fold(
+            (response){
+              AuthEntity authEntity = response.toAuthEntity();
+              return left(authEntity);
+            }, (error){
+              return right(error.toString());
+    });
+
+  }
+
 
 }

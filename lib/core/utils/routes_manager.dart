@@ -1,6 +1,6 @@
 
 class RoutesManager {
-  static const HomeRouteName= "/homeRoute";
-  static const SignInScreen= "/SignINRoute";
-  static const SignUpScreen= "/SignUpRoute";
+  static const String HomeRouteName= "/homeRoute";
+  static const String SignInScreen= "/SignINRoute";
+  static const  String SignUpScreen= "/SignUpRoute";
 }

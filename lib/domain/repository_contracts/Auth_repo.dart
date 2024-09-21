@@ -7,4 +7,9 @@ abstract class AuthRepo {
       required String password,
       required String name,
       required String mobile});
+
+ Future<Either<AuthEntity,String>>SignIN({
+    required String email,
+    required String password,
+  });
 }

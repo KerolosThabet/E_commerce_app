@@ -31,17 +31,20 @@ import '../../domain/repository_contracts/Brandes_repo.dart' as _i19;
 import '../../domain/repository_contracts/Categories_repo.dart' as _i17;
 import '../../domain/repository_contracts/Products_repo.dart' as _i13;
 import '../../domain/repository_contracts/SubCategoreis_repo.dart' as _i22;
-import '../../domain/usecases/brands_Usecase.dart' as _i30;
+import '../../domain/usecases/brands_Usecase.dart' as _i31;
 import '../../domain/usecases/Categories_Usecase.dart' as _i24;
 import '../../domain/usecases/Most_Selling_product_UseCase.dart' as _i21;
+import '../../domain/usecases/SignIn_Usecase.dart' as _i29;
 import '../../domain/usecases/SignuUp_Usecase.dart' as _i28;
 import '../../domain/usecases/SubCategoreis_UseCase.dart' as _i25;
 import '../../presentation/home/Home_ViewModel.dart' as _i3;
 import '../../presentation/home/tabs/Categories_tab/Categories_ViewModel.dart'
-    as _i29;
-import '../../presentation/home/tabs/Home_tab/Home_tab_view_model.dart' as _i31;
+    as _i30;
+import '../../presentation/home/tabs/Home_tab/Home_tab_view_model.dart' as _i32;
+import '../../presentation/signin_user/ViewModel/sign_in_veiw_model_cubit.dart'
+    as _i33;
 import '../../presentation/signup_user/ViewModel/sign_up_view_model_cubit.dart'
-    as _i32;
+    as _i34;
 import '../api/api_manager.dart' as _i4;
 
 extension GetItInjectableX on _i1.GetIt {
@@ -85,19 +88,23 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i27.AuthRepoImpl(gh<_i7.AuthDatasource>()));
     gh.factory<_i28.SignUpUseCase>(
         () => _i28.SignUpUseCase(gh<_i26.AuthRepo>()));
-    gh.factory<_i29.CategoriesViewmodel>(() => _i29.CategoriesViewmodel(
+    gh.factory<_i29.SignInUseCase>(
+        () => _i29.SignInUseCase(gh<_i26.AuthRepo>()));
+    gh.factory<_i30.CategoriesViewmodel>(() => _i30.CategoriesViewmodel(
           gh<_i24.CategoriesUseCase>(),
           gh<_i25.SubCategoriesUseCase>(),
         ));
-    gh.factory<_i30.BrandsUseCase>(
-        () => _i30.BrandsUseCase(gh<_i19.BrandesRepo>()));
-    gh.factory<_i31.HomeTabViewModel>(() => _i31.HomeTabViewModel(
+    gh.factory<_i31.BrandsUseCase>(
+        () => _i31.BrandsUseCase(gh<_i19.BrandesRepo>()));
+    gh.factory<_i32.HomeTabViewModel>(() => _i32.HomeTabViewModel(
           gh<_i24.CategoriesUseCase>(),
-          gh<_i30.BrandsUseCase>(),
+          gh<_i31.BrandsUseCase>(),
           gh<_i21.MostSellingProductUseCase>(),
         ));
-    gh.factory<_i32.SignUpViewModel>(
-        () => _i32.SignUpViewModel(gh<_i28.SignUpUseCase>()));
+    gh.factory<_i33.SignInViewModel>(
+        () => _i33.SignInViewModel(gh<_i29.SignInUseCase>()));
+    gh.factory<_i34.SignUpViewModel>(
+        () => _i34.SignUpViewModel(gh<_i28.SignUpUseCase>()));
     return this;
   }
 }

@@ -127,17 +127,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                   child: BlocConsumer<SignUpViewModel, SignUpViewModelState>(
                     listener: (context, state) {
-                      if(state is SignUpErrorState){
-                        Fluttertoast.showToast(
-                            msg: state.error,
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.CENTER,
-                            timeInSecForIosWeb: 1,
-                            backgroundColor: Colors.red,
-                            textColor: Colors.white,
-                            fontSize: 16.0.sp
-                        );
-                      }if(state is SignUpSuccessState){
+                      if(state is SignUpSuccessState){
                         if (kDebugMode) {
                           print(state.token);
                         }
@@ -151,6 +141,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             fontSize: 16.0.sp
                         );
                         Navigator.pushNamedAndRemoveUntil(context, RoutesManager.HomeRouteName, (route) => false);
+                      }if(state is SignUpErrorState){
+                        Fluttertoast.showToast(
+                            msg: state.error,
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.CENTER,
+                            timeInSecForIosWeb: 1,
+                            backgroundColor: Colors.red,
+                            textColor: Colors.white,
+                            fontSize: 16.0.sp
+                        );
                       }
                     },
 
